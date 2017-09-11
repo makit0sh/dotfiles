@@ -183,6 +183,7 @@ endif
 " }}}
 " airline {{{
 if s:dein_enabled && dein#tap('vim-airline') && dein#tap('vim-airline-themes')
+    "set guifont=Roboto\ Mono\ for\ Powerline\ 12
     "let g:airline_powerline_fonts = 1
     let g:airline_theme = 'hybrid'
 endif
@@ -318,6 +319,10 @@ if s:dein_enabled && dein#tap("vimfiler.vim")
     nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
 endif
 " }}}
+" tagbar {{{
+if s:dein_enabled && dein#tap('tagbar')
+    nmap <silent> <Leader>tb :TagbarToggle<CR>
+endif
 
 "general settings
 syntax on
@@ -343,7 +348,7 @@ set incsearch
 set wildmenu wildmode=list:full
 set virtualedit=onemore "let cursor move to everywhere
 set ruler
-scriptencoding
+scriptencoding utf-8
 set showcmd
 set ignorecase
 set smartcase
@@ -357,6 +362,9 @@ set whichwrap=b,s,h,l,<,>,,[,]
 set scrolloff=8
 set sidescrolloff=16
 set sidescroll=1
+" 前時代的スクリーンベルを無効化
+set t_vb=
+set novisualbell
 
 "backup dirs
 set backup
@@ -391,6 +399,21 @@ nnoremap tt :tabnew<CR>
 nnoremap Y y$
 nnoremap ; :
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+" j, k による移動を折り返されたテキストでも自然に振る舞うように変更
+nnoremap j gj
+nnoremap k gk
+" vを二回で行末まで選択
+vnoremap v $h
+" Ctrl + hjkl でウィンドウ間を移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
 "日本語入力便利マップ
 nnoremap <Down> gj
 nnoremap <Up>   gk
@@ -413,5 +436,4 @@ nnoremap し’ ci'
 inoremap <silent> jj <ESC>
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
-
 

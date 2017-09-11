@@ -64,5 +64,8 @@ on_cmd = ['<Plug>ZenCodingExpandNormal']
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 
+[[plugins]]
+repo = 'majutsushi/tagbar'
+on_cmd = ['TagbarTpggle']
 
 

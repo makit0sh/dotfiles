@@ -23,6 +23,7 @@ if has "brew"; then
     local -a desired_formulae=(
     'coreutils'
     'git'
+    'ctags'
     'go'
     'imagemagick'
     'lua'
