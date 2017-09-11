@@ -31,7 +31,8 @@ if has "brew"; then
     'pyenv'
     'tmux'
     'zsh'
-    'macvim --with-lua --with-luajit --with-override-system-vim'
+    'jvgrep'
+    #'macvim --with-lua --with-override-system-vim'
     )
 
     local installed=`brew list`

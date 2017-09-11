@@ -1,0 +1,68 @@
+#colorscheme
+# solarized
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+# mustang
+[[plugins]]
+repo = 'croaker/mustang-vim'
+# jellybeans
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+# molokai
+[[plugins]]
+repo = 'tomasr/molokai'
+#ancient
+[[plugins]]
+repo = 'saalaa/ancient-colors.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
+on_i = 1
+on_ft = ['snippet']
+
+[[plugins]]
+repo = 'Shougo/neocomplete'
+if = 'has("lua")'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = ['neomru.vim']
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = ['unite.vim']
+on_cmd = [ "VimFilerTab", "VimFiler", "VimFilerExplorer", "VimFilerBufferDir" ]
+on_map = ['<Plug>(vimfiler_switch)']
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+depends = ['vimproc.vim']
+on_cmd = ['VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
+on_map = ['<Plug>(vimshell_switch)']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'html5', 'eruby', 'jsp', 'xml', 'css', 'scss', 'coffee']
+on_cmd = ['<Plug>ZenCodingExpandNormal']
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+
+
+

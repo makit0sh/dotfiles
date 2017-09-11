@@ -1,270 +1,15 @@
-"---------------------------
-"Start Neobundle Settings.
-"---------------------------
-" bundleで管理するディレクトリを指定
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Prepare .vim dir
+let s:vimdir = $HOME . "/.vim"
+if has("vim_starting")
+  if ! isdirectory(s:vimdir)
+    call system("mkdir " . s:vimdir)
+    call system("mkdir " . s:vimdir . "/undo")
+    call system("mkdir " . s:vimdir . "/swp")
+    call system("mkdir " . s:vimdir . "/backup")
+  endif
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-"user plugins--------------
-"color schemes
-" 
-" solarized
-NeoBundleLazy 'altercation/vim-colors-solarized'
-" mustang
-NeoBundleLazy 'croaker/mustang-vim'
-" jellybeans
-NeoBundleLazy 'nanotech/jellybeans.vim'
-" molokai
-NeoBundleLazy 'tomasr/molokai'
-"hybrid
-NeoBundleLazy 'w0ng/vim-hybrid'
-"ancient
-NeoBundleLazy 'saalaa/ancient-colors.vim'
-"
-NeoBundleLazy 'scrooloose/nerdtree', {
-\   'autoload' : { 'commands' : [ 'NERDTree' ] },
-\ }
-nnoremap <silent><C-e> :NERDTree<CR>
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundleLazy 'Shougo/vimfiler', {
-  \ 'depends' : ["Shougo/unite.vim"],
-  \ 'autoload' : {
-  \   'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer", "VimFilerBufferDir" ],
-  \   'mappings' : ['<Plug>(vimfiler_switch)'],
-  \   'explorer' : 1,
-  \ }}
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-  \     'windows' : 'make -f make_mingw32.mak',
-  \     'cygwin' : 'make -f make_cygwin.mak',
-  \     'mac' : 'make -f make_mac.mak',
-  \     'unix' : 'make -f make_unix.mak',
-  \    },
-  \ }
-NeoBundleLazy 'Shougo/vimshell', {
-  \ 'depends' : 'Shougo/vimproc',
-  \ 'autoload' : {
-  \   'commands' : [{ 'name' : 'VimShell', 'complete' : 'customlist,vimshell#complete'},
-  \                 'VimShellExecute', 'VimShellInteractive',
-  \                 'VimShellTerminal', 'VimShellPop'],
-  \   'mappings' : ['<Plug>(vimshell_switch)']
-  \ }}
-NeoBundleLazy 'mattn/emmet-vim', {
-  \ 'autoload' : {
-  \   'filetypes' : ['html', 'html5', 'eruby', 'jsp', 'xml', 'css', 'scss', 'coffee'],
-  \   'commands' : ['<Plug>ZenCodingExpandNormal']
-  \ }}
-NeoBundle 'thinca/vim-quickrun'
-let g:quickrun_config = get(g:, 'quickrun_config', {})
-let g:quickrun_config._ = {
-      \ 'runner'    : 'vimproc',
-      \ 'runner/vimproc/updatetime' : 60,
-      \ 'outputter' : 'error',
-      \ 'outputter/error/success' : 'buffer',
-      \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
-      \ 'outputter/buffer/close_on_empty' : 1,
-      \ }
-let g:quickrun_config['tex'] = {
-\ 'command' : 'latexmk',
-\ 'outputter' : 'error',
-\ 'outputter/error/success' : 'null',
-\ 'outputter/error/error' : 'quickfix',
-\ 'srcfile' : expand("%"),
-\ 'cmdopt': '-pv',
-\ 'hook/sweep/files' : [
-\                      '%S:p:r.aux',
-\                      '%S:p:r.bbl',
-\                      '%S:p:r.blg',
-\                      '%S:p:r.dvi',
-\                      '%S:p:r.fdb_latexmk',
-\                      '%S:p:r.fls',
-\                      '%S:p:r.log',
-\                      '%S:p:r-blx.bib',
-\                      '%S:p:r.synctex.gz',
-\                      '%S:p:r.run.xml',
-\                      '%S:p:r.out',
-\                      '%S:p:r.toc'
-\                      ],
-\ 'exec': '%c %o %a %s',
-\}
-" 部分的に選択してコンパイル
-let g:quickrun_config.tmptex = {
-\   'exec': [
-\           'mv %s %a/tmptex.latex',
-\           'latexmk -pv -output-directory=%a %a/tmptex.latex',
-\           ],
-\   'args' : expand("%:p:h:gs?\\\\?/?"),
-\   'outputter' : 'error',
-\   'outputter/error/error' : 'quickfix',
-\
-\   'hook/eval/enable' : 1,
-\   'hook/eval/cd' : "%s:r",
-\
-\   'hook/eval/template' : '\documentclass[dvipdfmx,uplatex]{jsarticle}'
-\                         .'\usepackage[dvipdfmx]{graphicx, hyperref}'
-\                         .'\usepackage{float}'
-\                         .'\usepackage{amsmath,amssymb,amsthm,ascmac,mathrsfs}'
-\                         .'\begin{document}'
-\                         .'%s'
-\                         .'\end{document}',
-\
-\   'hook/sweep/files' : [
-\                      '%S:p:r.aux',
-\                      '%S:p:r.bbl',
-\                      '%S:p:r.blg',
-\                      '%S:p:r.dvi',
-\                      '%S:p:r.fdb_latexmk',
-\                      '%S:p:r.fls',
-\                      '%S:p:r.log',
-\                      '%S:p:r-blx.bib',
-\                      '%S:p:r.synctex.gz',
-\                      '%S:p:r.run.xml',
-\                      '%S:p:r.out',
-\                      'tmptex.aux',
-\                      'tmptex.bbl',
-\                      'tmptex.blg',
-\                      'tmptex.dvi',
-\                      'tmptex.fdb_latexmk',
-\                      'tmptex.fls',
-\                      'tmptex.log',
-\                      'tmptex-blx.bib',
-\                      'tmptex.synctex.gz',
-\                      'tmptex.run.xml',
-\                      'tmptex.out',
-\                      'tmptex.latex',
-\                      'tmptex.pdf'
-\                        ],
-\}
-vnoremap <silent><buffer> <C-f> :QuickRun -mode v -type tmptex<CR>
-nnoremap <silent><C-f> :QuickRun<CR>
-nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-NeoBundle 'grep.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/neocomplete.vim'
-" for LaTeX
-NeoBundle 'lervag/vimtex'
-"template
-NeoBundle 'thinca/vim-template'
-"vim-airline
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-"let g:airline_powerline_fonts = 1
-let g:airline_theme = 'hybrid'
-
-"yankround
-NeoBundle 'LeafCage/yankround.vim'
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-
-"--------------------------
-
-call neobundle#end()
-
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-NeoBundleCheck
-
-"-------------------------
-" End Neobundle Settings.
-"-------------------------
-
-"
-"neocomplete setting
-"
-
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-"
-" end of neocomplete setting
-"
-
-:set nocompatible
-:syntax enable
-
+"colorscheme
 "molokai
 ":set t_Co=256
 ":colorscheme molokai 
@@ -276,90 +21,374 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 ":colorscheme solarized
 
 "hybrid
-:set background=dark
-:colorscheme hybrid
+"set background=dark
+"colorscheme hybrid
 
-:filetype plugin indent on
-:set encoding=utf-8
-:set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
-:set fileformats=unix,dos,mac
-:set number
-:set title
-:set ambiwidth=double
-:set tabstop=4
-:set expandtab
-:set shiftwidth=4
-:set list
-:set listchars=tab:>-,trail:.
-:nnoremap Y y$
-:set display=lastline
-:set pumheight=10
-:set showmatch
-:set matchtime=2
-:set mouse=a
-:set incsearch
-:set wildmenu wildmode=list:full
-:set virtualedit=onemore "let cursor move to everywhere
-:set ruler
-:scriptencoding
-:set showcmd
-:set ignorecase
-:set smartcase
-:set hlsearch
-":set nohlsearch
-:set cindent
-:set laststatus=2
-:set cursorline
-:set backspace=indent,eol,start
-:set whichwrap=b,s,h,l,<,>,,[,]
-:set scrolloff=8
-:set sidescrolloff=16
-:set sidescroll=1
+" vi compatibility
+if !&compatible
+  set nocompatible
+endif
 
-:set backup
-:set writebackup
-:set backupdir=$HOME/.vim/backup
-:set directory=$HOME/.vim/swp
-:set undodir=$HOME/.vim/undo
+"
+" dein settings {{{
+"
+"Flag
+let s:use_dein = 1
 
+let s:dein_enabled = 0
+if s:use_dein && v:version >= 704
+    let s:dein_enabled = 1
+
+    " dein.vimのディレクトリ
+    let s:dein_dir = s:vimdir . '/dein'
+    let s:dein_github = s:dein_dir . '/repos/github.com'
+    let s:dein_repo_name = "Shougo/dein.vim"
+    let s:dein_repo_dir = s:dein_github . '/' . s:dein_repo_name
+
+    " なければgit clone
+    if !isdirectory(s:dein_repo_dir)
+        echo "dein is not installed, install now "
+        let s:dein_repo = "https://github.com/" . s:dein_repo_name
+        echo "git clone " . s:dein_repo . " " . s:dein_repo_dir
+        call system("git clone " . s:dein_repo . " " . s:dein_repo_dir)
+    endif
+    let &runtimepath = &runtimepath . "," . s:dein_repo_dir
+
+    if dein#load_state(s:dein_dir)
+        call dein#begin(s:dein_dir)
+
+        " 管理するプラグインを記述したファイル
+        let s:toml = '~/.dein.toml'
+        let s:lazy_toml = '~/.dein_lazy.toml'
+        call dein#load_toml(s:toml, {'lazy': 0})
+        call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+        call dein#end()
+        call dein#save_state()
+    endif
+    " プラグインの追加・削除やtomlファイルの設定を変更した後は
+    " 適宜 call dein#update や call dein#clear_state を呼んでください。
+    " そもそもキャッシュしなくて良いならload_state/save_stateを呼ばないようにしてください。
+
+    " vimprocだけは最初にインストールしてほしい
+"    if dein#check_install(['vimproc'])
+"        call dein#install(['vimproc'])
+"    endif
+    " その他インストールしていないものはこちらに入れる
+    if dein#check_install()
+        call dein#install()
+    endif
+endif
+" }}}
+
+" quickrun {{{
+if s:dein_enabled && dein#tap("vim-quickrun")
+    let g:quickrun_config = get(g:, 'quickrun_config', {})
+    let g:quickrun_config._ = {
+                \ 'runner'    : 'vimproc',
+                \ 'runner/vimproc/updatetime' : 60,
+                \ 'outputter' : 'error',
+                \ 'outputter/error/success' : 'buffer',
+                \ 'outputter/error/error'   : 'quickfix',
+                \ 'outputter/buffer/split'  : ':rightbelow 8sp',
+                \ 'outputter/buffer/close_on_empty' : 1,
+                \ }
+    let g:quickrun_config['tex'] = {
+                \ 'command' : 'latexmk',
+                \ 'outputter' : 'error',
+                \ 'outputter/error/success' : 'null',
+                \ 'outputter/error/error' : 'quickfix',
+                \ 'srcfile' : expand("%"),
+                \ 'cmdopt': '-pv',
+                \ 'hook/sweep/files' : [
+                \                      '%S:p:r.aux',
+                \                      '%S:p:r.bbl',
+                \                      '%S:p:r.blg',
+                \                      '%S:p:r.dvi',
+                \                      '%S:p:r.fdb_latexmk',
+                \                      '%S:p:r.fls',
+                \                      '%S:p:r.log',
+                \                      '%S:p:r-blx.bib',
+                \                      '%S:p:r.synctex.gz',
+                \                      '%S:p:r.run.xml',
+                \                      '%S:p:r.out',
+                \                      '%S:p:r.toc'
+                \                      ],
+                \ 'exec': '%c %o %a %s',
+                \}
+    " 部分的に選択してコンパイル
+    let g:quickrun_config.tmptex = {
+                \   'exec': [
+                \           'mv %s %a/tmptex.latex',
+                \           'latexmk -pv -output-directory=%a %a/tmptex.latex',
+                \           ],
+                \   'args' : expand("%:p:h:gs?\\\\?/?"),
+                \   'outputter' : 'error',
+                \   'outputter/error/error' : 'quickfix',
+                \
+                \   'hook/eval/enable' : 1,
+                \   'hook/eval/cd' : "%s:r",
+                \
+                \   'hook/eval/template' : '\documentclass[dvipdfmx,uplatex]{jsarticle}'
+                \                         .'\usepackage[dvipdfmx]{graphicx, hyperref}'
+                \                         .'\usepackage{float}'
+                \                         .'\usepackage{amsmath,amssymb,amsthm,ascmac,mathrsfs}'
+                \                         .'\begin{document}'
+                \                         .'%s'
+                \                         .'\end{document}',
+                \
+                \   'hook/sweep/files' : [
+                \                      '%S:p:r.aux',
+                \                      '%S:p:r.bbl',
+                \                      '%S:p:r.blg',
+                \                      '%S:p:r.dvi',
+                \                      '%S:p:r.fdb_latexmk',
+                \                      '%S:p:r.fls',
+                \                      '%S:p:r.log',
+                \                      '%S:p:r-blx.bib',
+                \                      '%S:p:r.synctex.gz',
+                \                      '%S:p:r.run.xml',
+                \                      '%S:p:r.out',
+                \                      'tmptex.aux',
+                \                      'tmptex.bbl',
+                \                      'tmptex.blg',
+                \                      'tmptex.dvi',
+                \                      'tmptex.fdb_latexmk',
+                \                      'tmptex.fls',
+                \                      'tmptex.log',
+                \                      'tmptex-blx.bib',
+                \                      'tmptex.synctex.gz',
+                \                      'tmptex.run.xml',
+                \                      'tmptex.out',
+                \                      'tmptex.latex',
+                \                      'tmptex.pdf'
+                \                        ],
+                \}
+    "TODO キーマップ
+    vnoremap <silent><buffer> <C-f> :QuickRun -mode v -type tmptex<CR>
+    nnoremap <silent><C-f> :QuickRun<CR>
+    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+endif
+" }}}
+" grep {{{
+if s:dein_enabled && dein#tap('grep.vim')
+    nnoremap <expr> gr ':Rgrep<CR>'
+    let Grep_Skip_Dirs = '.svn .git'  "無視するディレクトリ
+    let Grep_Default_Options = '-I'   "バイナルファイルがgrepしない
+    let Grep_Skip_Files = '*.bak *~'  "バックアップファイルを無視する
+    if executable('jvgrep')
+        set grepprg=jvgrep
+    endif
+endif
+" }}}
+" airline {{{
+if s:dein_enabled && dein#tap('vim-airline') && dein#tap('vim-airline-themes')
+    "let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'hybrid'
+endif
+"}}}
+" yankround {{{
+if s:dein_enabled && dein#tap('yankround.vim')
+    nmap p <Plug>(yankround-p)
+    xmap p <Plug>(yankround-p)
+    nmap P <Plug>(yankround-P)
+    nmap gp <Plug>(yankround-gp)
+    xmap gp <Plug>(yankround-gp)
+    nmap gP <Plug>(yankround-gP)
+    nmap <C-p> <Plug>(yankround-prev)
+    nmap <C-n> <Plug>(yankround-next)
+endif
+" }}}
+" neocomplete {{{
+if s:dein_enabled && dein#tap('neocomplete')
+    "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+    " Disable AutoComplPop.
+    let g:acp_enableAtStartup = 0
+    " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
+    " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+    " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+    " Define dictionary.
+    let g:neocomplete#sources#dictionary#dictionaries = {
+                \ 'default' : '',
+                \ 'vimshell' : $HOME.'/.vimshell_hist',
+                \ 'scheme' : $HOME.'/.gosh_completions'
+                \ }
+
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+    " Plugin key-mappings.
+    inoremap <expr><C-g>     neocomplete#undo_completion()
+    inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+    " Recommended key-mappings.
+    " <CR>: close popup and save indent.
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+        return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+        " For no inserting <CR> key.
+        "return pumvisible() ? "\<C-y>" : "\<CR>"
+    endfunction
+    " <TAB>: completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    " <C-h>, <BS>: close popup and delete backword char.
+    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    " Close popup by <Space>.
+    "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+    " AutoComplPop like behavior.
+    "let g:neocomplete#enable_auto_select = 1
+
+    " Shell like behavior(not recommended).
+    "set completeopt+=longest
+    "let g:neocomplete#enable_auto_select = 1
+    "let g:neocomplete#disable_auto_complete = 1
+    "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+    " Enable omni completion.
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+        let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+    " For perlomni.vim setting.
+    " https://github.com/c9s/perlomni.vim
+    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+endif
+" }}}
 " emmet {{{
-let g:use_emmet_complete_tag = 1
-let g:user_emmet_settings = {
-  \ 'lang' : 'ja',
-  \ 'html' : {
-  \   'indentation' : '  '
-  \ }}
+if s:dein_enabled && dein#tap('emmet-vim')
+    let g:use_emmet_complete_tag = 1
+    let g:user_emmet_settings = {
+                \ 'lang' : 'ja',
+                \ 'html' : {
+                \   'indentation' : '  '
+                \ }}
+endif
+" }}}
+" vimshell {{{
+if s:dein_enabled && dein#tap('vimshell.vim')
+    "nmap <silent> vs :<C-u>VimShell<CR>
+    "nmap <silent> vp :<C-u>VimShellPop<CR>
+    "シェルを起動
+    nnoremap <silent> ,s :VimShell<CR>
+    nnoremap <silent> ,p :VimShellPop<CR>
+    "pythonを非同期で起動
+    nnoremap <silent> ,py :VimShellInteractive python<CR>
+    "irbを非同期で起動
+    nnoremap <silent> ,rb :VimShellInteractive irb<CR>
+    "luaを非同期で起動
+    nnoremap <silent> ,lu :VimShellInteractive lua<CR>
+    "非同期で開いたインタプリタに現在の行を評価させる
+    vmap <silent> ,ss :VimShellSendString<CR>
+    "選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
+    nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
+    " Use current directoy as vimshell prompt.
+    let g:vimshell_prompt_expr =
+                \ 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
+    let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
+endif
+" }}}
+" vimfiler {{{
+if s:dein_enabled && dein#tap("vimfiler.vim")
+    "vimデフォルトのエクスプローラをvimfilerで置き換える
+    let g:vimfiler_as_default_explorer = 1
+    "セーフモードを無効にした状態で起動する
+    let g:vimfiler_safe_mode_by_default = 0
+    "現在開いているバッファのディレクトリを開く
+    nnoremap <silent> <Leader>fe :<C-u>VimFilerBufferDir -quit<CR>
+    "現在開いているバッファをIDE風に開く
+    nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+endif
 " }}}
 
-"vimshell {{{
-"nmap <silent> vs :<C-u>VimShell<CR>
-"nmap <silent> vp :<C-u>VimShellPop<CR>
-"シェルを起動
-nnoremap <silent> ,s :VimShell<CR>
-nnoremap <silent> ,p :VimShellPop<CR>
-"pythonを非同期で起動
-nnoremap <silent> ,py :VimShellInteractive python<CR>
-"irbを非同期で起動
-nnoremap <silent> ,rb :VimShellInteractive irb<CR>
-"luaを非同期で起動
-nnoremap <silent> ,lu :VimShellInteractive lua<CR>
-"非同期で開いたインタプリタに現在の行を評価させる
-vmap <silent> ,ss :VimShellSendString<CR>
-"選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
-nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
-" Use current directoy as vimshell prompt.
-let g:vimshell_prompt_expr =
-            \ 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
-let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
-" }}}
+"general settings
+syntax on
+filetype plugin indent on
+"set nocompatible
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
+set number
+set title
+set ambiwidth=double
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set list
+set listchars=tab:>-,trail:.
+set display=lastline
+set pumheight=10
+set showmatch
+set matchtime=2
+set mouse=a
+set incsearch
+set wildmenu wildmode=list:full
+set virtualedit=onemore "let cursor move to everywhere
+set ruler
+scriptencoding
+set showcmd
+set ignorecase
+set smartcase
+set hlsearch
+"set nohlsearch
+set cindent
+set laststatus=2
+set cursorline
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,,[,]
+set scrolloff=8
+set sidescrolloff=16
+set sidescroll=1
 
-augroup QuickFixCmd
-  autocmd!
-  autocmd QuickFixCmdPost *grep* cwindow
-augroup END
+"backup dirs
+set backup
+set writebackup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/swp
+if has('persistent_undo')
+    set undodir=$HOME/.vim/undo
+    set undofile
+endif
 
+if has("autocmd")
+    "最後に開いていた時のカーソル位置を保存する
+    augroup vimrcEx
+        au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+                    \ exe "normal g`\"" | endif
+    augroup END
+    "quickfix を自動で開く
+    augroup QuickFixCmd
+        autocmd!
+        autocmd QuickFixCmdPost *grep* cwindow
+    augroup END
+endif
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+"keymaps
 nnoremap tt :tabnew<CR>
-
+nnoremap Y y$
 nnoremap ; :
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 "日本語入力便利マップ
@@ -384,3 +413,5 @@ nnoremap し’ ci'
 inoremap <silent> jj <ESC>
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
+
+
