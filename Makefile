@@ -8,3 +8,7 @@ deploy:
 
 init: deploy
 	@$(foreach val, $(wildcard ./etc/init/*.sh), bash $(val);)
+
+update:
+	@$(foreach val, $(wildcard ./etc/update/*.sh), bash $(val);)
+
