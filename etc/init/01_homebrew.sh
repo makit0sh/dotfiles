@@ -25,15 +25,19 @@ if has "brew"; then
     'git'
     'ctags'
     'go'
+    'ghostscript'
     'imagemagick'
     'lua'
     'ruby-build'
     'rbenv'
     'pyenv'
+    'pyenv-virtualenv'
     'tmux'
+    'reattach-to-user-namespace'
     'zsh'
+    'zsh-completions'
     'jvgrep'
-    #'macvim --with-lua --with-override-system-vim'
+    'vim --with-lua --with-override-system-vim'
     )
 
     local installed=`brew list`

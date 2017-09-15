@@ -70,10 +70,6 @@ if s:use_dein && v:version >= 704
     " 適宜 call dein#update や call dein#clear_state を呼んでください。
     " そもそもキャッシュしなくて良いならload_state/save_stateを呼ばないようにしてください。
 
-    " vimprocだけは最初にインストールしてほしい
-"    if dein#check_install(['vimproc'])
-"        call dein#install(['vimproc'])
-"    endif
     " その他インストールしていないものはこちらに入れる
     if dein#check_install()
         call dein#install()
@@ -165,8 +161,8 @@ if s:dein_enabled && dein#tap("vim-quickrun")
                 \                        ],
                 \}
     "TODO キーマップ
-    vnoremap <silent><buffer> <C-f> :QuickRun -mode v -type tmptex<CR>
-    nnoremap <silent><C-f> :QuickRun<CR>
+    vnoremap <silent><buffer> <Leader>ll :QuickRun -mode v -type tmptex<CR>
+    nnoremap <silent><Leader>ll :QuickRun<CR>
     nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 endif
 " }}}
