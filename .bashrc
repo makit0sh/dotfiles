@@ -13,13 +13,5 @@ alias rm='rm -i'
 alias grep='grep -E --color=auto'
 alias od='od -txlz -Ax -v'
 
-#use macvim for vim&vi----
-if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ];then
-    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-fi
 
-export PATH=/usr/local/bin:$PATH
-#end of user definition----------
 
-export PATH="$PATH:"/Applications/microchip/xc8/v1.38/bin""
