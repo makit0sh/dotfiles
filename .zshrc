@@ -94,12 +94,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 
 #use macvim for vim&vi----
-#if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ];then
-#    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#fi
-#export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-export EDITOR=vim
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ];then
+    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+fi
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+#export EDITOR=vim
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 export GIT_EDITOR="${EDITOR}"
