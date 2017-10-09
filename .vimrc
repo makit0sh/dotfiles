@@ -270,6 +270,31 @@ if s:dein_enabled && dein#tap('neocomplete')
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 endif
 " }}}
+
+" neosnipet {{{
+if s:dein_enabled && dein#tap('neosnippet')
+    " Plugin key-mappings.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+    " SuperTab like snippets behavior.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    imap <expr><TAB>
+     \ pumvisible() ? "\<C-n>" :
+     \ neosnippet#expandable_or_jumpable() ?
+     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+    " For conceal markers.
+    if has('conceal')
+      set conceallevel=2 concealcursor=niv
+    endif
+endif
+" }}}
 " emmet {{{
 if s:dein_enabled && dein#tap('emmet-vim')
     let g:use_emmet_complete_tag = 1
@@ -401,10 +426,10 @@ nnoremap k gk
 " vを二回で行末まで選択
 vnoremap v $h
 " Ctrl + hjkl でウィンドウ間を移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
 " Shift + 矢印でウィンドウサイズを変更
 nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w>><CR>
@@ -413,10 +438,10 @@ nnoremap <S-Down>  <C-w>+<CR>
 "日本語入力便利マップ
 nnoremap <Down> gj
 nnoremap <Up>   gk
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-h> <Left>
+"inoremap <C-l> <Right>
 " 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
 nnoremap あ a
 nnoremap い i
