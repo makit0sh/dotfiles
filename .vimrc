@@ -290,9 +290,9 @@ if s:dein_enabled && dein#tap('neosnippet')
     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
     " For conceal markers.
-    if has('conceal')
-      set conceallevel=2 concealcursor=niv
-    endif
+    "if has('conceal')
+    "  set conceallevel=2 concealcursor=niv
+    "endif
 endif
 " }}}
 " emmet {{{
