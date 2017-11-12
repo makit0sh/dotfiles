@@ -200,9 +200,10 @@ endif
 if s:dein_enabled && dein#tap('neocomplete')
     "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
-    let g:acp_enableAtStartup = 0
+    let g:acp_enableAtStartup = 1
     " Use neocomplete.
     let g:neocomplete#enable_at_startup = 1
+    NeoCompleteEnable
     " Use smartcase.
     let g:neocomplete#enable_smart_case = 1
     " Set minimum syntax keyword length.
@@ -303,6 +304,18 @@ if s:dein_enabled && dein#tap('emmet-vim')
                 \ 'html' : {
                 \   'indentation' : '  '
                 \ }}
+endif
+" }}}
+" syntastic {{{
+if s:dein_enabled && dein#tap('syntastic')
+   set statusline+=%#warningmsg#
+   set statusline+=%{SyntasticStatuslineFlag()}
+   set statusline+=%*
+
+   let g:syntastic_always_populate_loc_list = 1
+   let g:syntastic_auto_loc_list = 1
+   let g:syntastic_check_on_open = 1
+   let g:syntastic_check_on_wq = 0
 endif
 " }}}
 " vimshell {{{
