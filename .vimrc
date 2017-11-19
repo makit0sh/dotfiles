@@ -164,6 +164,8 @@ if s:dein_enabled && dein#tap("vim-quickrun")
     vnoremap <silent><buffer> <Leader>ll :QuickRun -mode v -type tmptex<CR>
     nnoremap <silent><Leader>ll :QuickRun<CR>
     nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+    "texファイル保存時の挙動
+    autocmd BufWrite *.{tex} :QuickRun
 endif
 " }}}
 " grep {{{
@@ -470,4 +472,5 @@ nnoremap し’ ci'
 inoremap <silent> jj <ESC>
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
+
 
