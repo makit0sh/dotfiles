@@ -165,7 +165,10 @@ if s:dein_enabled && dein#tap("vim-quickrun")
     nnoremap <silent><Leader>ll :QuickRun<CR>
     nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
     "texファイル保存時の挙動
-    autocmd BufWritePost *.{tex} :QuickRun
+    augroup latexautocompile
+        autocmd!
+        autocmd BufWritePost *.{tex} :QuickRun
+    augroup END
 endif
 " }}}
 " grep {{{
