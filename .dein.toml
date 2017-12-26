@@ -26,6 +26,7 @@ repo = 'vim-scripts/grep.vim'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
+#repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'thinca/vim-template'
@@ -39,4 +40,8 @@ repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
 
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
 
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
