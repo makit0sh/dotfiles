@@ -143,3 +143,27 @@ if which pyenv-vertualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 
 #gettext
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+# zplug
+source ~/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+# theme
+#zplug "mafredri/zsh-async"
+#zplug "sindresorhus/pure"
+# syntax highlighting
+zplug "zsh-users/zsh-syntax-highlighting"
+# history
+zplug "zsh-users/zsh-history-substring-search"
+# completion
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "chrissicool/zsh-256color"
+# install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+# Then, source plugins and add commands to $PATH
+zplug load
