@@ -1,0 +1,12 @@
+numpy
+scipy
+
+matplotlib
+PyQt5
+
+pandas
+jupyter
+jupyterlab
+
+scikit-learn
+

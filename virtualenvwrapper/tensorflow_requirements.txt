@@ -1,0 +1,9 @@
+tensorflow
+
+keras
+
+scipy
+
+matplotlib
+PyQt5
+

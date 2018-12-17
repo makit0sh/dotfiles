@@ -135,17 +135,22 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #pyenv
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-export PATH="${PYENV_ROOT}/shims:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-vertualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi;
+#export PYENV_ROOT="${HOME}/.pyenv"
+#export PATH="${PYENV_ROOT}/bin:$PATH"
+#export PATH="${PYENV_ROOT}/shims:$PATH"
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#if which pyenv-vertualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi;
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
 
 #gettext
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # zplug
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # theme
 #zplug "mafredri/zsh-async"
