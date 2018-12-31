@@ -21,15 +21,23 @@ $ git clone https://github.com/makit0sh/dotfiles
 ## Initialize
 ```
 $ cd ~/dotfiles
-$ ./init.sh $PLATFORM_NAME
+$ export PLATFORM_NAME=your_platform_name
+$ make init
 ```
-This script will run init scripts for corresponding $PLATFORM_NAME.
+These command will run init scripts for corresponding $PLATFORM_NAME.
 
 ### Build and deploy dotfiles
 ```
 $ cd ~/dotfiles
-$ ./deploy.sh $PLATFORM_NAME
+$ export PLATFORM_NAME=your_platform_name
+$ make deploy
 ```
 This script will build dotfiles for corresponding $PLATFORM_NAME and creates symbolic links on your home directory.
 Your former dotfiles will be renamed as backup.
 
+### Removal
+```
+$ cd ~/dotfiles
+$ make clean
+```
+These command will remove all deployed symbolic links on your home directory and remove build.
