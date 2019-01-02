@@ -1,3 +1,0 @@
-" plugin settings for snippets
-
-

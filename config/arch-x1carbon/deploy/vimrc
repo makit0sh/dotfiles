@@ -17,5 +17,8 @@ plugged/vim-plug.vim
 # plugin settings
 plugged/colorscheme_hybrid.vim
 plugged/airline.vim
-plugged/snippets.vim
+#plugged/deoplete.vim
+#plugged/neosnippets.vim
+plugged/ycm.vim
+plugged/ultisnips.vim
 
