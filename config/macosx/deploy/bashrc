@@ -1,0 +1,11 @@
+# deploy target destination path and filename
+target = .bashrc
+# subdirectory = .config
+
+# filenames to concatenate
+# filename should not contain '='
+# general settings
+aliases
+# macosx specific environment variables
+macosx/env_variables
+macosx/colors

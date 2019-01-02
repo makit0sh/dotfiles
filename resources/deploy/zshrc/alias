@@ -1,0 +1,17 @@
+# alias
+alias c="clear"
+alias cdd="cd ../"
+alias cddd="cd ../../"
+alias cdddd="cd ../../../"
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ls='ls -G'
+alias l='ls'
+alias ll='ls -hl'
+alias la='ls -a'
+alias lla='ls -la'
+alias mv="mv -i"
+alias rm='rm -i'
+alias grep='grep -E --color=auto'
+alias od='od -txlz -Ax -v'
+

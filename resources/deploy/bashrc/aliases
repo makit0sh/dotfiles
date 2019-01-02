@@ -1,0 +1,10 @@
+# aliases for shell
+alias ls='ls -G'
+alias l='ls'
+alias ll='ls -hl'
+alias la='ls -a'
+alias lla='ls -la'
+alias rm='rm -i'
+alias grep='grep -E --color=auto'
+alias od='od -txlz -Ax -v'
+
