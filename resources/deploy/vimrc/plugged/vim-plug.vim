@@ -18,16 +18,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-"if has("python3")
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-"endif
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
-"Plug 'zxqfl/tabnine-vim'
+Plug 'w0rp/ale'
+
+Plug 'lervag/vimtex'
 
 Plug 'rhysd/clever-f.vim'
+Plug 'osyo-manga/vim-anzu'
 
 " initialize plugin system
 call plug#end()

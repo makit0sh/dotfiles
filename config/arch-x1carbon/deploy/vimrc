@@ -21,4 +21,6 @@ plugged/airline.vim
 #plugged/neosnippets.vim
 plugged/ycm.vim
 plugged/ultisnips.vim
+plugged/ale.vim
+plugged/vim-anzu.vim
 
