@@ -7,7 +7,7 @@ DOTFILES_DIR	:= $(PWD)
 RM	:= rm -rf
 
 target			:= $$PLATFORM_NAME
-TARGET_PATH		:= $(HOME)/Documents/tmp
+TARGET_PATH		:= $(HOME)
 
 .PHONY: build
 build:
