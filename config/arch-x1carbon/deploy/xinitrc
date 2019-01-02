@@ -1,0 +1,12 @@
+## deploy target destination path and filename
+target = .xinitrc
+## specify subdirectory if necessary
+# subdirectory = .config
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+arch_xinitrc_basic
+fcitx
+i3
+

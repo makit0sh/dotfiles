@@ -1,0 +1,13 @@
+!!
+!! rxvt-unicode
+!!
+
+!! Font list and Spacing
+URxvt.font:		xft:Dejavu Sans Mono-16,\
+			xft:IPAGothic
+URxvt.letterSpace:	-1
+!URxvt.lineSpace:	0
+
+URxvt.foreground:	white
+URxvt.background:	black
+
