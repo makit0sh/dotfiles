@@ -1,0 +1,19 @@
+## deploy target destination path and filename
+target = .vimrc
+## specify subdirectory if necessary
+# subdirectory = .config
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+vim_basic.vim
+undo_swap_backup.vim
+keymaps_basic.vim
+cursorline_custom.vim
+quickfix.vim
+
+vim-plug.vim
+
+# plugins
+plugged/colorscheme_hybrid.vim
+plugged/airline.vim
