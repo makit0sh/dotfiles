@@ -23,4 +23,5 @@ plugged/ycm.vim
 plugged/ultisnips.vim
 plugged/ale.vim
 plugged/vim-anzu.vim
+plugged/vimtex.vim
 
