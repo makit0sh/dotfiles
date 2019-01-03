@@ -2,12 +2,56 @@
 !! rxvt-unicode
 !!
 
+URxvt.scrollBar:	true
+URxvt.scrollBar_right:	true
+URxvt.scrollBar_floating:	true
+URxvt.scrollstyle:	plain
+
+URxvt.pointerBlank:	true
+URxvt.visualBell:	true
+
+URxvt.depth:	32
+URxvt.fading:	40
+
 !! Font list and Spacing
 URxvt.font:		xft:Dejavu Sans Mono-16,\
 			xft:IPAGothic
 URxvt.letterSpace:	-1
-!URxvt.lineSpace:	0
 
-URxvt.foreground:	white
-URxvt.background:	black
+! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
+! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
+! https://github.com/w0ng/vim-hybrid
+
+URxvt.background: [90]#1D1F21
+URxvt.foreground: [90]#C5C8C6
+! black
+URxvt.color0: [90]#282A2E
+URxvt.color8: [90]#373B41
+! red
+URxvt.color1: [90]#A54242
+URxvt.color9: [90]#CC6666
+! green
+URxvt.color2: [90]#8C9440
+URxvt.color10: [90]#B5BD68
+! yellow
+URxvt.color3: [90]#DE935F
+URxvt.color11: [90]#F0C674
+! blue
+URxvt.color4: [90]#5F819D
+URxvt.color12: [90]#81A2BE
+! magenta
+URxvt.color5: [90]#85678F
+URxvt.color13: [90]#B294BB
+! cyan
+URxvt.color6: [90]#5E8D87
+URxvt.color14: [90]#8ABEB7
+! white
+URxvt.color7: [90]#707880
+URxvt.color15: [90]#C5C8C6
+
+!URxvt.colorIT:     [90]#8ec07c
+!URxvt.colorBD:     [90]#fe8019
+!URxvt.colorUL:     [90]#83a598
+!URxvt.scrollColor: [90]#504945
+!URxvt.troughColor: [90]#3C3836
 

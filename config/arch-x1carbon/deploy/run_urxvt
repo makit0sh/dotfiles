@@ -1,13 +1,9 @@
 ## deploy target destination path and filename
-target = .xinitrc
+target = run_urxvt.sh
 ## specify subdirectory if necessary
-# subdirectory = .config
+subdirectory = .config/i3/script
 
 ## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
 ## filename should not contain '='
 
-arch_xinitrc_basic
-xcompmgr
-fcitx
-i3
-
+run_urxvt.sh

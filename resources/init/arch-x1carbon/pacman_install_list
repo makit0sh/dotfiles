@@ -74,12 +74,14 @@ docker
 terminus-font
 otf-ipafont
 ttf-dejavu
+powerline-fonts
 
 # X Window System
 xorg-server
 xorg-apps
 xorg-xinit
 xf86-video-intel
+xcompmgr
 
 # fcitx
 fcitx
