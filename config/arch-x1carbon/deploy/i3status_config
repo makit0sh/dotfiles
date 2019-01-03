@@ -1,12 +1,9 @@
 ## deploy target destination path and filename
-target = config
+target = .config
 ## specify subdirectory if necessary
-subdirectory = .config/i3
+subdirectory = .config/i3status
 
 ## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
 ## filename should not contain '='
 
-basic_config
-wallpaper
-hardware_key_arch_x1carbon
-
+i3status_basic
