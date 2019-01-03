@@ -1,0 +1,11 @@
+# arch user repository AUR install list
+
+# AUR helper
+yay
+
+# system util
+lenovo-throttling-fix-git
+s-tui
+nvme-cli
+
+

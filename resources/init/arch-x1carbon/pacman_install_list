@@ -1,0 +1,107 @@
+# pacman install list
+
+# base system
+base
+base-devel
+
+# network related
+iw
+wpa_supplicant
+wpa_actiond
+dialog
+ethtool
+ifplugd
+ntp
+openssh
+
+# core system
+intel-ucode
+grub
+os-prober
+
+# system util
+dmidecode
+efibootmgr
+intel-gpu-tools
+powertop
+tlp
+tlp-rdw
+acpi_call
+smartmontools
+
+# basic util
+git
+mlocate
+tmux
+tree
+gvim
+
+# shell
+fish
+zsh
+zsh-completions
+
+# bluetooth
+bluz
+bluez-utils
+blueman
+
+# sound
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pamixer
+pavucontrol
+
+# TeX
+texlive-most
+texlive-langjapanese
+ghostscript
+
+# pacman related
+pacman-contrib
+reflector
+
+# dev tools
+clang
+cmake
+python-pip
+go
+docker
+
+# font
+terminus-font
+otf-ipafont
+ttf-dejavu
+
+# X Window System
+xorg-server
+xorg-apps
+xorg-xinit
+xf86-video-intel
+
+# fcitx
+fcitx
+fcitx-im
+fcitx-configtool
+fcitx-mozc
+
+# i3
+i3
+
+# X apps
+rxvt-unicode
+rofi
+ranger
+imagemagick
+firefox
+flashplugin
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-poppler
+zathura-ps
+poppler-data
+
+
