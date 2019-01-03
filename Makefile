@@ -21,12 +21,12 @@ init:
 deploy:
 	@make build
 	@echo linking dotfiles into home directory...
-	@sh $(SCRIPT_DIR)/deploy.sh $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH)
+	@sh $(SCRIPT_DIR)/deploy.sh $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH) $(PWD)
 
 .PHONY: clean
 clean:
 	@echo removing symbolic links...
-	@sh $(SCRIPT_DIR)/remove_links.sh $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH)
+	@sh $(SCRIPT_DIR)/remove_links.sh $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH) $(PWD)
 	@echo removing build directory...
 	$(RM) $(BUILD_DIR)
 
