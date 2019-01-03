@@ -1,0 +1,10 @@
+## deploy target destination path and filename
+target = rofi_launch.sh
+## specify subdirectory if necessary
+subdirectory = .config/i3/script
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+rofi_launch.sh
+
