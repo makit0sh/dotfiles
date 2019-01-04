@@ -7,6 +7,7 @@ subdirectory = .config/i3
 ## filename should not contain '='
 
 basic_config
+i3blocks
 wallpaper
 hardware_key_arch_x1carbon
 

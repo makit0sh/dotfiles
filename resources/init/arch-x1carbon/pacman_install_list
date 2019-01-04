@@ -13,6 +13,7 @@ ethtool
 ifplugd
 ntp
 openssh
+openvpn
 
 # core system
 intel-ucode
@@ -28,6 +29,10 @@ tlp
 tlp-rdw
 acpi_call
 smartmontools
+acpi
+bc
+lm_sensors
+sysstat
 
 # basic util
 git
@@ -53,6 +58,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 pamixer
 pavucontrol
+playerctl
 
 # TeX
 texlive-most
@@ -75,6 +81,9 @@ terminus-font
 otf-ipafont
 ttf-dejavu
 powerline-fonts
+ttf-hack
+awesome-terminal-fonts
+ttf-font-awesome
 
 # X Window System
 xorg-server
@@ -91,6 +100,7 @@ fcitx-mozc
 
 # i3
 i3
+i3blocks
 
 # X apps
 rxvt-unicode
