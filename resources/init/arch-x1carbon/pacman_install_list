@@ -116,5 +116,9 @@ zathura-djvu
 zathura-pdf-poppler
 zathura-ps
 poppler-data
-
+keepassxc
+owncloud-client
+libgnome-keyring
+gnome-keyring
+seahorse
 

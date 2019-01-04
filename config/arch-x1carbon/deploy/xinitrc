@@ -9,5 +9,8 @@ target = .xinitrc
 arch_xinitrc_basic
 xcompmgr
 fcitx
+gnome-keyring
+owncloud
+dropbox
 i3
 
