@@ -19,7 +19,6 @@ for target in `ls -A`; do
         mkdir -p $target_path/$target_subdir
     done
     for target_file in `find $target -type f`; do
-	    echo $is_backup
         if [ $is_backup = "true" -a -e $target_path/$target_file ]; then
             echo $target_file file already exists, renaming to $target_file`date +"%Y-%m-%dT%H:%M:%S"`.bak for backup
             mv $target_path/$target_file $target_path/$target_file`date +"%Y-%m-%dT%H:%M:%S"`.bak
