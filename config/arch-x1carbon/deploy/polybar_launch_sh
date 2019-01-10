@@ -1,21 +1,9 @@
 ## deploy target destination path and filename
-target = config
+target = launch.sh
 ## specify subdirectory if necessary
-subdirectory = .config/i3
+subdirectory = .config/polybar
 
 ## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
 ## filename should not contain '='
 
-basic_config
-system_control
-#i3blocks
-#i3status
-polybar
-wallpaper
-hardware_key_arch_x1carbon
-
-startups/dunst
-startups/blueman
-startups/volumeicon
-#startups/dropbox
-#startups/owncloud
+launch.sh

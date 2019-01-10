@@ -122,6 +122,8 @@ owncloud-client
 libreoffice-still
 thunderbird
 thunderbird-i18n-ja
+dunst
+volumeicon
 
 # gnome keyring
 libgnome-keyring
