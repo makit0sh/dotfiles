@@ -101,6 +101,7 @@ fcitx-mozc
 # i3
 i3
 i3blocks
+xautolock
 
 # X apps
 rxvt-unicode
@@ -118,7 +119,22 @@ zathura-ps
 poppler-data
 keepassxc
 owncloud-client
+libreoffice-still
+thunderbird
+thunderbird-i18n-ja
+
+# gnome keyring
 libgnome-keyring
 gnome-keyring
 seahorse
 
+# print
+cups
+cups-pdf
+avahi
+nss-mdns
+rpmextract
+a2ps
+
+# pacman
+namcap

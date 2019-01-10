@@ -8,6 +8,7 @@ target = .xinitrc
 
 arch_xinitrc_basic
 xcompmgr
+xautolock
 fcitx
 gnome-keyring
 owncloud

@@ -1,0 +1,3 @@
+# set screenlock using xautolock
+xautolock -time 10 -locker "i3lock -i '~/Pictures/wallpaper.png'" -lockaftersleep &
+
