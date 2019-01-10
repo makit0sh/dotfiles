@@ -1,16 +1,17 @@
 #!/bin/sh
 
-if [ $# -eq 4 ]; then
-    echo deploying configuration for $1...
+if [ $# -eq 5 ]; then
+    echo deploying configuration for $2...
 else
-    echo "specify build directory, script directory, target path and current directory" 1>&2
+    echo "specify is_backup, build directory, script directory, target path and current directory" 1>&2
     exit 1
 fi
 
-build_dir=$1
-script_dir=$2
-target_path=$3
-current_dir=$4
+is_backup=$1
+build_dir=$2
+script_dir=$3
+target_path=$4
+current_dir=$5
 
 cd $build_dir
 for target in `ls -A`; do
@@ -18,7 +19,8 @@ for target in `ls -A`; do
         mkdir -p $target_path/$target_subdir
     done
     for target_file in `find $target -type f`; do
-        if [ -e $target_path/$target_file ]; then
+	    echo $is_backup
+        if [ $is_backup = "true" -a -e $target_path/$target_file ]; then
             echo $target_file file already exists, renaming to $target_file`date +"%Y-%m-%dT%H:%M:%S"`.bak for backup
             mv $target_path/$target_file $target_path/$target_file`date +"%Y-%m-%dT%H:%M:%S"`.bak
         fi

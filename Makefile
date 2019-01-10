@@ -21,7 +21,13 @@ init:
 deploy:
 	@make build
 	@echo linking dotfiles into home directory...
-	@sh $(SCRIPT_DIR)/deploy.sh $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH) $(PWD)
+	@sh $(SCRIPT_DIR)/deploy.sh true $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH) $(PWD)
+
+.PHONY: deploy-no-backup
+deploy-no-backup:
+	@make build
+	@echo linking dotfiles into home directory...
+	@sh $(SCRIPT_DIR)/deploy.sh false $(BUILD_DIR) $(SCRIPT_DIR) $(TARGET_PATH) $(PWD)
 
 .PHONY: clean
 clean:
