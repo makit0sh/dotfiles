@@ -90,7 +90,7 @@ xorg-server
 xorg-apps
 xorg-xinit
 xf86-video-intel
-xcompmgr
+compton
 
 # fcitx
 fcitx
@@ -135,6 +135,8 @@ avahi
 nss-mdns
 rpmextract
 a2ps
+# necessary for brother 32bit driver
+lib32-glibc
 
 # pacman
 namcap

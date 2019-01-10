@@ -7,7 +7,7 @@ target = .xinitrc
 ## filename should not contain '='
 
 arch_xinitrc_basic
-xcompmgr
+compton
 xautolock
 fcitx
 gnome-keyring
