@@ -14,6 +14,7 @@ ifplugd
 ntp
 openssh
 openvpn
+samba
 
 # core system
 intel-ucode
@@ -40,6 +41,7 @@ mlocate
 tmux
 tree
 gvim
+wget
 
 # shell
 fish
@@ -124,6 +126,8 @@ thunderbird
 thunderbird-i18n-ja
 dunst
 volumeicon
+parcellite
+arandr
 
 # gnome keyring
 libgnome-keyring

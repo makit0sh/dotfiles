@@ -16,6 +16,7 @@ hardware_key_arch_x1carbon
 
 startups/dunst
 startups/blueman
-startups/volumeicon
-#startups/dropbox
-#startups/owncloud
+startups/parcellite
+startups/dropbox
+startups/owncloud
+

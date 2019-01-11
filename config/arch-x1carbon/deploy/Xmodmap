@@ -7,5 +7,6 @@ target = .Xmodmap
 ## filename should not contain '='
 
 inverse_scroll
-caps_Lcontrol_swap
+#caps_Lcontrol_swap
+caps_lock_shift
 

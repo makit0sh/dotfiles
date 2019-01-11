@@ -11,7 +11,7 @@ compton
 xautolock
 fcitx
 gnome-keyring
-owncloud
-dropbox
+#owncloud
+#dropbox
 i3
 

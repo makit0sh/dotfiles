@@ -20,3 +20,5 @@ zotero
 # i3 related
 polybar
 
+# speed up browser and long life of ssd
+profile-sync-daemon
