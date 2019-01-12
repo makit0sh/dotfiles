@@ -1,0 +1,20 @@
+#prompt
+# 色付きにする。
+autoload -Uz colors
+colors
+# 上から順に、ユーザ名、ホスト名、カレントディレクトリ、グループ名、プロンプト
+# プロンプトは、スーパーユーザ時に #
+# スーパーユーザ以外かつ直前のコマンドの終了コードが 0 であるなら !, 0 でないなら $
+p_usr="%{${fg[green]}%}%n%{${reset_color}%}"
+p_hst="%{${fg[magenta]}%}@%m%{${reset_color}%}"
+p_dir="%{${fg[cyan]}%}:%/%{${reset_color}%}"
+p_grp="[${GROUP}]"
+p_prt="%(?!%(!.#.$) !? )"
+PROMPT="${p_usr}${p_hst}${p_dir}"$'\n'"${p_grp}${p_prt}"
+## if ... fi とか "..." など、複数行にわたる場合
+PROMPT2="%{${fg[yellow]}%}%_> %{${reset_color}%}"
+## コマンド訂正時
+SPROMPT="%{${fg[yellow]}%}correct%{${reset_color}%}: %{${fg[red]}%}%R%{${reset_color}%} => %{${fg[cyan]}%}%r%{${reset_color}%} (y|n|a|e)? "
+#PROMPT="[%~]"$'\n'" %#  "
+# 右に出るプロンプト。日時を表示する。
+RPROMPT="[%D{%m/%d %H:%M}]"

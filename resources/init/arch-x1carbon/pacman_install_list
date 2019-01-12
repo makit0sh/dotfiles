@@ -41,7 +41,12 @@ mlocate
 tmux
 tree
 gvim
+vimpager
 wget
+
+# dev tools
+nodejs
+npm
 
 # shell
 fish

@@ -5,13 +5,14 @@ alias cddd="cd ../../"
 alias cdddd="cd ../../../"
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias l='ls'
 alias ll='ls -hl'
 alias la='ls -a'
 alias lla='ls -la'
 alias mv="mv -i"
 alias rm='rm -i'
+alias vi='vim'
 alias grep='grep -E --color=auto'
 alias od='od -txlz -Ax -v'
 
