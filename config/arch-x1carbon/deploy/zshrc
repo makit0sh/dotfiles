@@ -15,4 +15,4 @@ arch_x1carbon_envs
 
 #prompt
 zplug
-prompt_pure
+#prompt_pure
