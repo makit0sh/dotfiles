@@ -133,6 +133,7 @@ dunst
 volumeicon
 parcellite
 arandr
+xsel
 
 # gnome keyring
 libgnome-keyring
