@@ -1,0 +1,3 @@
+# launch thunar as daemon for automount using thunar-volman
+thunar --daemon &
+

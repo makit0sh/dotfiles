@@ -16,3 +16,5 @@ bindsym Print exec --no-startup-id import -window root ~/Pictures/screenshot`dat
 # bind XF86Display to arandr
 bindsym XF86Display exec arandr
 
+# bind XF86Tools to arandr
+bindsym XF86Tools exec thunar

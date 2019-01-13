@@ -6,7 +6,7 @@ target = .Xmodmap
 ## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
 ## filename should not contain '='
 
-inverse_scroll
+#inverse_scroll
 #caps_Lcontrol_swap
 caps_lock_shift
 

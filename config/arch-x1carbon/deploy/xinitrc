@@ -11,6 +11,7 @@ compton
 xautolock
 fcitx
 gnome-keyring
+thunar_daemon
 #owncloud
 #dropbox
 i3

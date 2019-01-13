@@ -4,24 +4,28 @@
 base
 base-devel
 
-# network related
+# core system
+intel-ucode
+grub
+os-prober
+
+# network
+## network manage
 iw
 wpa_supplicant
 wpa_actiond
 dialog
 ethtool
 ifplugd
+
+## network tools
 ntp
 openssh
 openvpn
 samba
 
-# core system
-intel-ucode
-grub
-os-prober
-
 # system util
+## system manage
 dmidecode
 efibootmgr
 intel-gpu-tools
@@ -35,6 +39,20 @@ bc
 lm_sensors
 sysstat
 
+## sound
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pamixer
+pavucontrol
+playerctl
+
+## bluetooth
+bluz
+bluez-utils
+blueman
+
 # basic util
 git
 mlocate
@@ -43,29 +61,24 @@ tree
 gvim
 vimpager
 wget
-
-# dev tools
-nodejs
-npm
-
-# shell
+## shell
 fish
 zsh
 zsh-completions
 
-# bluetooth
-bluz
-bluez-utils
-blueman
-
-# sound
-alsa-utils
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
-pamixer
-pavucontrol
-playerctl
+# dev tools
+docker
+## c
+clang
+cmake
+## nodejs
+nodejs
+npm
+## python
+python-pip
+python-pipenv
+## go
+go
 
 # TeX
 texlive-most
@@ -75,13 +88,7 @@ ghostscript
 # pacman related
 pacman-contrib
 reflector
-
-# dev tools
-clang
-cmake
-python-pip
-go
-docker
+namcap
 
 # font
 terminus-font
@@ -96,59 +103,92 @@ ttf-font-awesome
 xorg-server
 xorg-apps
 xorg-xinit
-xf86-video-intel
-compton
 
-# fcitx
+## X Tools
+compton
+dunst
+xsel
+arandr
+
+## driver
+xf86-video-intel
+xf86-input-synaptics
+
+## fcitx
 fcitx
 fcitx-im
 fcitx-configtool
 fcitx-mozc
 
-# i3
+## gnome keyring
+libgnome-keyring
+gnome-keyring
+seahorse
+
+## i3
 i3
-i3blocks
 xautolock
 
-# X apps
+## terminal
 rxvt-unicode
+
+## launcher
 rofi
+
+## file manager
 ranger
+thunar
+thunar-archive-plugin
+xarchiver
+thunar-media-tags-plugin
+thunar-volman
+tumbler
+ffmpagthumbnailer
+gvfs
+
+## viewer
+### picture viewer
 feh
-imagemagick
-firefox
-flashplugin
+gpicview
+### video player
+vlc
+### pdf viewer
 zathura
 zathura-cb
 zathura-djvu
 zathura-pdf-poppler
 zathura-ps
 poppler-data
-keepassxc
-owncloud-client
+evince
+### office tools
 libreoffice-still
 thunderbird
 thunderbird-i18n-ja
-dunst
+
+## browser
+firefox
+flashplugin
+
+## cloud service
+owncloud-client
+
+## applet tools
 volumeicon
 parcellite
-arandr
-xsel
 
-# gnome keyring
-libgnome-keyring
-gnome-keyring
-seahorse
-
-# print
+## print
 cups
 cups-pdf
 avahi
 nss-mdns
 rpmextract
 a2ps
-# necessary for brother 32bit driver
+### required for brother 32bit driver
 lib32-glibc
 
-# pacman
-namcap
+## X applications
+imagemagick
+keepassxc
+gimp
+inkscape
+
