@@ -16,6 +16,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
+zplug "rupa/z", use:z.sh
 
 # Add a bunch more of your favorite packages!
 

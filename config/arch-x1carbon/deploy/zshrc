@@ -16,3 +16,5 @@ arch_x1carbon_envs
 #prompt
 zplug
 #prompt_pure
+fzf-z-search
+fzf-autocompletion

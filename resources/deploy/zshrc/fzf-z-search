@@ -1,0 +1,16 @@
+# zplugなどでzをインストールしとく
+# zplug "rupa/z", use:z.sh
+# https://qiita.com/kamykn/items/aa9920f07487559c0c7e
+
+fzf-z-search() {
+    local res=$(z | sort -rn | cut -c 12- | fzf)
+    if [ -n "$res" ]; then
+        BUFFER+="cd $res"
+        zle accept-line
+    else
+        return 1
+    fi
+}
+
+zle -N fzf-z-search
+bindkey '^f' fzf-z-search
