@@ -68,6 +68,7 @@ zsh-completions
 
 # dev tools
 docker
+fzf
 ## c
 clang
 cmake

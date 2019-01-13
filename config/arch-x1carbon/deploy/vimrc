@@ -25,4 +25,6 @@ plugged/ultisnips.vim
 plugged/ale.vim
 plugged/vim-anzu.vim
 plugged/vimtex.vim
-
+plugged/yankround.vim
+plugged/emmet.vim
+plugged/commentary.vim

@@ -21,11 +21,17 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
 Plug 'w0rp/ale'
+Plug 'junegunn/fzf'
 
 Plug 'lervag/vimtex'
 
 Plug 'rhysd/clever-f.vim'
 Plug 'osyo-manga/vim-anzu'
+Plug 'LeafCage/yankround.vim'
+Plug 'tpope/vim-commentary'
+
+Plug 'vim-scripts/xml.vim'
+Plug 'mattn/emmet-vim'
 
 " initialize plugin system
 call plug#end()
