@@ -1,3 +1,4 @@
 #!/bin/sh
 
-echo init 00
+echo Start Initialization...
+

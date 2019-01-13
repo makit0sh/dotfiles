@@ -1,0 +1,9 @@
+# template for initialization config file
+
+# you can run shell scripts in resources/init directory by specifying filanames
+# 00_init.sh
+# you can also create subdirectories in resources/init directory
+# hoge/hoge_fuga.sh
+
+arch-x1carbon/deploy_to_home_dir.sh
+

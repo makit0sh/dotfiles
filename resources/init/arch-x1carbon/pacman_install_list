@@ -86,6 +86,7 @@ go
 texlive-most
 texlive-langjapanese
 ghostscript
+python-pygments
 
 # pacman related
 pacman-contrib

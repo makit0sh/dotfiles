@@ -9,3 +9,9 @@ let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
 " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
 
+" directory for custom snippets
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+
+" filetypes
+autocmd FileType plaintex UltiSnipsAddFiletypes tex.plaintex
+
