@@ -10,8 +10,8 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
+# zplug "mafredri/zsh-async"
+# zplug "sindresorhus/pure"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"

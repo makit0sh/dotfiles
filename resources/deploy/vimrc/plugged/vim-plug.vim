@@ -25,6 +25,7 @@ Plug 'junegunn/fzf'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'lervag/vimtex'
 

@@ -30,3 +30,4 @@ plugged/commentary.vim
 plugged/anyfold.vim
 plugged/fold-cycle.vim
 plugged/tagbar.vim
+plugged/gitgutter.vim

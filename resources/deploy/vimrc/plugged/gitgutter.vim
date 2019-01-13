@@ -1,0 +1,2 @@
+" gitgutter setting
+
