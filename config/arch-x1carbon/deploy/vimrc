@@ -12,6 +12,7 @@ keymaps_basic.vim
 cursorline_custom.vim
 quickfix.vim
 transparent.vim
+tags.vim
 
 plugged/vim-plug.vim
 
@@ -28,3 +29,4 @@ plugged/emmet.vim
 plugged/commentary.vim
 plugged/anyfold.vim
 plugged/fold-cycle.vim
+plugged/tagbar.vim

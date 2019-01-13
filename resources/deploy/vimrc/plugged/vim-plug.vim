@@ -22,6 +22,9 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-scripts/taglist.vim'
+Plug 'majutsushi/tagbar'
 
 Plug 'lervag/vimtex'
 
