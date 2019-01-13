@@ -34,6 +34,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'pseewald/vim-anyfold'
+Plug 'arecarn/vim-fold-cycle'
 
 Plug 'vim-scripts/xml.vim'
 Plug 'mattn/emmet-vim'

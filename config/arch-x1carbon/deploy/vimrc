@@ -26,3 +26,5 @@ plugged/vimtex.vim
 plugged/yankround.vim
 plugged/emmet.vim
 plugged/commentary.vim
+plugged/anyfold.vim
+plugged/fold-cycle.vim
