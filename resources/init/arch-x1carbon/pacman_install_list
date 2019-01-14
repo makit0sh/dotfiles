@@ -94,6 +94,7 @@ reflector
 namcap
 
 # font
+fontforge
 terminus-font
 otf-ipafont
 ttf-dejavu

@@ -24,7 +24,7 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 set shiftwidth=2
-set ambiwidth=double
+"set ambiwidth=double "disabled because airline broke
 
 set nrformats-=octal
 
