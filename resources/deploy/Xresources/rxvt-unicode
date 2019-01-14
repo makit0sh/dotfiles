@@ -14,7 +14,7 @@ URxvt.depth:	32
 URxvt.fading:	20
 
 !! Font list and Spacing
-URxvt.font:		xft:Dejavu Sans Mono for Powerline:size=16,\
+URxvt.font:		xft:Dejavu Sans Mono for Powerline:size=14,\
 			xft:IPAexGothic
 URxvt.letterSpace:	-1
 
