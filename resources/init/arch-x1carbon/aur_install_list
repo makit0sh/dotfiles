@@ -23,4 +23,8 @@ polybar
 # speed up browser and long life of ssd
 profile-sync-daemon
 
+# font
+font-manager
+ttf-mona
+otf-takao
 

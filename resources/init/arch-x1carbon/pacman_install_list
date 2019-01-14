@@ -101,6 +101,10 @@ powerline-fonts
 ttf-hack
 awesome-terminal-fonts
 ttf-font-awesome
+powerline-fonts
+noto-fonts-cjk
+adobe-source-han-sans-otc-fonts
+adobe-source-han-serif-otc-fonts
 
 # X Window System
 xorg-server
@@ -114,7 +118,9 @@ xsel
 arandr
 
 ## driver
-xf86-video-intel
+mesa
+lib32-mesa
+#xf86-video-intel
 xf86-input-synaptics
 
 ## fcitx

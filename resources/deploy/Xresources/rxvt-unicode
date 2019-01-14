@@ -11,11 +11,11 @@ URxvt.pointerBlank:	true
 URxvt.visualBell:	true
 
 URxvt.depth:	32
-URxvt.fading:	40
+URxvt.fading:	20
 
 !! Font list and Spacing
-URxvt.font:		xft:Dejavu Sans Mono-16,\
-			xft:IPAGothic
+URxvt.font:		xft:Dejavu Sans Mono for Powerline:size=16,\
+			xft:IPAexGothic
 URxvt.letterSpace:	-1
 
 ! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
