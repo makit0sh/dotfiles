@@ -17,6 +17,7 @@ wpa_actiond
 dialog
 ethtool
 ifplugd
+dnstutils
 
 ## network tools
 ntp
