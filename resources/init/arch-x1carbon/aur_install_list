@@ -22,6 +22,7 @@ zotero
 
 # i3 related
 polybar
+rofi-calc
 
 # speed up browser and long life of ssd
 profile-sync-daemon

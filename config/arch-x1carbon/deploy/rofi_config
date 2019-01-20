@@ -1,23 +1,10 @@
 ## deploy target destination path and filename
 target = config
 ## specify subdirectory if necessary
-subdirectory = .config/i3
+subdirectory = .config/rofi
 
 ## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
 ## filename should not contain '='
 
 basic_config
-system_control
-#i3blocks
-#i3status
-polybar
-wallpaper
-hardware_key_arch_x1carbon
-rofi_calc
-
-startups/dunst
-startups/blueman
-startups/parcellite
-startups/dropbox
-startups/owncloud
 
