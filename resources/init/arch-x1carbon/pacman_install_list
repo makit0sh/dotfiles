@@ -161,6 +161,29 @@ tumbler
 ffmpagthumbnailer
 gvfs
 
+## ranger related
+highlight
+lynx
+elinks
+poppler
+mediainfo
+w3m
+
+## compress
+atool
+bzip2
+cpio
+gzip
+lhasa
+xz
+lzop
+p7zip
+tar
+unace
+unrar
+zip
+unzip
+
 ## viewer
 ### picture viewer
 feh
