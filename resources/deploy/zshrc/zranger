@@ -1,0 +1,4 @@
+# Vifon/zranger settings
+autoload -U zranger
+bindkey -s '\ez' "\eq zranger\n"
+
