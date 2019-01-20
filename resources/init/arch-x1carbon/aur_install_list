@@ -8,6 +8,9 @@ lenovo-throttling-fix-git
 s-tui
 nvme-cli
 
+# network
+netctl-eduroam
+
 # dropbox
 dropbox
 

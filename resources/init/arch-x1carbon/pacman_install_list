@@ -39,6 +39,7 @@ acpi
 bc
 lm_sensors
 sysstat
+ntfs-3g
 
 ## sound
 alsa-utils
@@ -82,6 +83,9 @@ python-pip
 python-pipenv
 ## go
 go
+## java
+jre-openjdk
+jdk-openjdk
 
 # TeX
 texlive-most
