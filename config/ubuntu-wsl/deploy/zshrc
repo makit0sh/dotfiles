@@ -12,6 +12,7 @@ dircolors
 history_search
 auto_ls_after_cd
 ubuntu_wsl_envs
+autoattach_tmux
 
 #prompt
 zplug_with_pure
