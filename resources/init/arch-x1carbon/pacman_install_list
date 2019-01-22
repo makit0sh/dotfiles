@@ -32,7 +32,7 @@ efibootmgr
 intel-gpu-tools
 powertop
 tlp
-tlp-rdw
+#tlp-rdw
 acpi_call
 smartmontools
 acpi
