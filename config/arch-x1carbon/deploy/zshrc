@@ -18,5 +18,7 @@ zplug
 prompt_pure
 fzf-z-search
 fzf-autocompletion
+fzf-shell-commands
+fzf-git
 
 ranger
