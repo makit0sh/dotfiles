@@ -1,0 +1,3 @@
+# move to trash using DD
+map DD shell gio trash %s
+
