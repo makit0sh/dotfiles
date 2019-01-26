@@ -16,6 +16,7 @@ hardware_key_arch_x1carbon
 rofi_calc
 
 startups/dunst
+startups/nm_applet
 startups/blueman
 startups/parcellite
 startups/dropbox

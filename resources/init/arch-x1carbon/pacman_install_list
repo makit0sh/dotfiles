@@ -18,6 +18,8 @@ dialog
 ethtool
 ifplugd
 dnstutils
+networkmanager
+network-manager-applet
 
 ## network tools
 ntp
