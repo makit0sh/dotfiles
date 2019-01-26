@@ -121,8 +121,8 @@ xorg-apps
 xorg-xinit
 
 ## X Tools
+xfce4-notifyd
 compton
-dunst
 xsel
 arandr
 
@@ -232,4 +232,7 @@ imagemagick
 keepassxc
 gimp
 inkscape
+
+# icons
+gnome-icon-theme
 
