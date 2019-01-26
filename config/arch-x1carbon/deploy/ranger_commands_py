@@ -8,5 +8,6 @@ subdirectory = .config/ranger
 
 template.py
 trash_empty.py
-
+archive.py
+cdemu.py
 
