@@ -201,6 +201,8 @@ zathura-pdf-poppler
 zathura-ps
 poppler-data
 evince
+mupdf
+mupdf-tools
 ### office tools
 libreoffice-still
 thunderbird

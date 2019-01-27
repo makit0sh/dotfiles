@@ -33,3 +33,9 @@ otf-takao
 google-chrome
 chrome-remote-desktop
 
+# pdftk
+pdftk-bin
+
+# rofi clipboard manager
+rofi-greenclip
+

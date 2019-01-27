@@ -14,6 +14,7 @@ polybar
 wallpaper
 hardware_key_arch_x1carbon
 rofi_calc
+rofi_greenclip
 
 startups/nm_applet
 startups/blueman
