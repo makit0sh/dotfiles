@@ -16,7 +16,6 @@ wpa_supplicant
 wpa_actiond
 dialog
 ethtool
-ifplugd
 dnstutils
 networkmanager
 network-manager-applet
@@ -34,7 +33,7 @@ efibootmgr
 intel-gpu-tools
 powertop
 tlp
-#tlp-rdw
+tlp-rdw
 acpi_call
 smartmontools
 acpi
@@ -42,6 +41,7 @@ bc
 lm_sensors
 sysstat
 ntfs-3g
+cdemu-client
 
 ## sound
 alsa-utils
@@ -75,6 +75,8 @@ zsh-completions
 docker
 fzf
 ctags
+## binary hacks
+
 ## c
 clang
 cmake
@@ -125,6 +127,9 @@ xfce4-notifyd
 compton
 xsel
 arandr
+
+# icons
+gnome-icon-theme
 
 ## driver
 mesa
@@ -235,8 +240,3 @@ keepassxc
 gimp
 inkscape
 
-# icons
-gnome-icon-theme
-
-# cdemu
-cdemu-client
