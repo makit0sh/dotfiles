@@ -16,7 +16,7 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 set smartindent
-set cindent
+set autoindent
 set backspace=indent,eol,start
 set complete-=i
 
