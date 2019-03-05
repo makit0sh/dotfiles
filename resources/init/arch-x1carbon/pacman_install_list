@@ -73,6 +73,7 @@ zsh-completions
 
 # dev tools
 docker
+docker-compose
 fzf
 ctags
 ## binary hacks
