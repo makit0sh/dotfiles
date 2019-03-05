@@ -26,9 +26,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
-
-Plug 'lervag/vimtex'
-
 Plug 'rhysd/clever-f.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'LeafCage/yankround.vim'
@@ -41,8 +38,12 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'pseewald/vim-anyfold'
 Plug 'arecarn/vim-fold-cycle'
 
-Plug 'vim-scripts/xml.vim'
-Plug 'mattn/emmet-vim'
+Plug 'lervag/vimtex', {'for': ['tex']}
+
+Plug 'vim-scripts/xml.vim', {'for': ['xml']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+
+Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'clojure']}
 
 " initialize plugin system
 call plug#end()
