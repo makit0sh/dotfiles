@@ -7,6 +7,7 @@ target = .vimrc
 ## filename should not contain '='
 
 vim_basic.vim
+filetypes.vim
 undo_swap_backup.vim
 keymaps_basic.vim
 cursorline_custom.vim
