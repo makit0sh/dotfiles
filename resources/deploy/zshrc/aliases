@@ -13,6 +13,4 @@ alias lla='ls -la'
 alias mv="mv -i"
 alias rm='rm -i'
 alias vi='vim'
-alias grep='grep -E --color=auto'
-alias od='od -tx1z -Ax -v'
 
