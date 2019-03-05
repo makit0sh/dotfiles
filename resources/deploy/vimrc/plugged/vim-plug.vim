@@ -43,7 +43,8 @@ Plug 'lervag/vimtex', {'for': ['tex']}
 Plug 'vim-scripts/xml.vim', {'for': ['xml']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 
-Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'clojure']}
+"Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'clojure']}
+Plug 'jiangmiao/auto-pairs', {'for': ['lisp', 'scheme', 'clojure']}
 
 " initialize plugin system
 call plug#end()
