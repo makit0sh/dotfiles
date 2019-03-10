@@ -10,6 +10,7 @@ nvme-cli
 
 # dropbox
 dropbox
+thunar-dropbox
 
 # thunderbird plugins
 thunderbird-sogo-connector-bin
@@ -20,6 +21,7 @@ zotero
 # i3 related
 polybar
 rofi-calc
+xfce4-i3-workspaces-plugin-git
 
 # speed up browser and long life of ssd
 profile-sync-daemon

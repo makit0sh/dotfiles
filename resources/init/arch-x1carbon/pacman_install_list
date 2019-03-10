@@ -129,6 +129,11 @@ compton
 xsel
 arandr
 
+## xfce
+xfce4
+xfce4-goodies
+gamin
+
 # icons
 gnome-icon-theme
 
