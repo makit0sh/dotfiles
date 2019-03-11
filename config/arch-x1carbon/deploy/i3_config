@@ -20,5 +20,5 @@ startups/nm_applet
 startups/blueman
 startups/parcellite
 startups/dropbox
-startups/owncloud
+# startups/owncloud
 
