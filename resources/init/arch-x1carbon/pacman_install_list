@@ -224,7 +224,7 @@ firefox
 flashplugin
 
 ## cloud service
-owncloud-client
+# owncloud-client
 
 ## applet tools
 volumeicon
