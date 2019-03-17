@@ -89,6 +89,8 @@ python-pip
 python-pipenv
 ## go
 go
+## common lisp
+clisp
 ## java
 jre-openjdk
 jdk-openjdk
