@@ -11,4 +11,5 @@ export PAGER="vimpager"
 # add path for utils put in home directory
 export PATH="$PATH:/home/toshiya/bin"
 
-
+# pkg-config path
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"

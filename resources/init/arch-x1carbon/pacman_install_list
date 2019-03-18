@@ -95,6 +95,11 @@ clisp
 jre-openjdk
 jdk-openjdk
 
+## opencv
+opencv
+opencv-samples
+hdf5
+
 # TeX
 texlive-most
 texlive-langjapanese
