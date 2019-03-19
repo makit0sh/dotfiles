@@ -41,3 +41,5 @@ pdftk-bin
 # rofi clipboard manager
 rofi-greenclip
 
+# opencv2
+opencv2

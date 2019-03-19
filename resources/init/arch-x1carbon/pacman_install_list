@@ -81,6 +81,7 @@ ctags
 ## c
 clang
 cmake
+gdb
 ## nodejs
 nodejs
 npm
@@ -96,9 +97,11 @@ jre-openjdk
 jdk-openjdk
 
 ## opencv
-opencv
-opencv-samples
+# opencv
+# opencv-samples
 hdf5
+## opengl
+freeglut
 
 # TeX
 texlive-most
