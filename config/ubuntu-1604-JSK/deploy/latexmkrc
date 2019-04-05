@@ -1,0 +1,11 @@
+## deploy target destination path and filename
+target = .latexmkrc
+## specify subdirectory if necessary
+# subdirectory = .config
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+uplatex_basic
+arch_zathura_viewer
+
