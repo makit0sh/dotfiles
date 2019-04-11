@@ -38,10 +38,13 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'pseewald/vim-anyfold'
 Plug 'arecarn/vim-fold-cycle'
 
-Plug 'lervag/vimtex', {'for': ['tex']}
+Plug 'lervag/vimtex', {'for': ['tex', 'sty']}
 
 Plug 'vim-scripts/xml.vim', {'for': ['xml']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+
+" for ROS
+Plug 'taketwo/vim-ros'
 
 "Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'clojure']}
 Plug 'jiangmiao/auto-pairs', {'for': ['lisp', 'scheme', 'clojure']}

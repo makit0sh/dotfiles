@@ -10,6 +10,6 @@ export PLATFORM_NAME=ubuntu-1604-JSK
 #export PATH="$PATH:/home/toshiya/bin"
 
 # for ROS
-source /opt/ros/kinetic/setup.zsh
+source ~/.ros_envs.zsh
 
-
+source ‘rospack find jsk_tools‘/src/bashrc.ros
