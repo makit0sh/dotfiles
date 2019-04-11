@@ -95,6 +95,8 @@ clisp
 ## java
 jre-openjdk
 jdk-openjdk
+## haskell
+stack
 
 ## opencv
 # opencv
