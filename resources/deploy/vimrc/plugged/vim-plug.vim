@@ -46,6 +46,9 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 "Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'clojure']}
 Plug 'jiangmiao/auto-pairs', {'for': ['lisp', 'scheme', 'clojure']}
 
+" for Haskell
+Plug 'kana/vim-filetype-haskell'
+
 " initialize plugin system
 call plug#end()
 
