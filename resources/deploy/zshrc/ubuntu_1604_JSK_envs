@@ -12,4 +12,3 @@ export PLATFORM_NAME=ubuntu-1604-JSK
 # for ROS
 source ~/.ros_envs.zsh
 
-source ‘rospack find jsk_tools‘/src/bashrc.ros
