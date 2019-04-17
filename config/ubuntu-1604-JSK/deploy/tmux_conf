@@ -7,4 +7,4 @@ target = .tmux.conf
 ## filename should not contain '='
 
 basic_config
-#copy_xsel
+copy_xsel
