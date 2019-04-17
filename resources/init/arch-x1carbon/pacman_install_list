@@ -155,6 +155,10 @@ lib32-mesa
 #xf86-video-intel
 xf86-input-synaptics
 
+# video
+# for parole
+gst-libav
+
 ## fcitx
 fcitx
 fcitx-im
