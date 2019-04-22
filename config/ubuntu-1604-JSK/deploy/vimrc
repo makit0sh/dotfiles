@@ -33,3 +33,4 @@ plugged/fold-cycle.vim
 plugged/tagbar.vim
 plugged/gitgutter.vim
 plugged/auto-pairs.vim
+plugged/vim-ros.vim
