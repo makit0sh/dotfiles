@@ -1,0 +1,13 @@
+## deploy target destination path and filename
+target = commands.py
+## specify subdirectory if necessary
+subdirectory = .config/ranger
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+template.py
+trash_empty.py
+archive.py
+cdemu.py
+
