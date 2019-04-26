@@ -17,5 +17,8 @@ ubuntu_1604_JSK_envs
 #prompt
 zplug_with_pure
 #prompt_pure
-#fzf-z-search
-#fzf-autocompletion
+fzf-autocompletion-git
+fzf-z-search
+fzf-git
+fzf-shell-commands
+ranger
