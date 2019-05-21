@@ -1,7 +1,7 @@
 " basic keymaps
 
 " turn ; into : for US keyboard
-nnoremap ; :
+" nnoremap ; :
 
 nnoremap tt :tabnew<CR>
 nnoremap Y y$
