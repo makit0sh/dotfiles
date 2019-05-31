@@ -9,10 +9,10 @@ nnoremap Y y$
 vnoremap v $h
 
 " behave naturally in wrapped sentences
-nnoremap j gj
-nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
+" nnoremap j gj
+" nnoremap k gk
+" nnoremap <Down> gj
+" nnoremap <Up> gk
 
 " change window size by arrows
 nnoremap <C-w><Left> <C-w><<CR>
@@ -26,3 +26,8 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 inoremap <C-U> <C-G>u<C-U>
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+" quickly open active file with %%
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'

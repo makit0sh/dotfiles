@@ -108,3 +108,4 @@ set whichwrap=b,s,h,l,<,>,[,]
 set t_vb=
 set novisualbell
 
+set hidden
