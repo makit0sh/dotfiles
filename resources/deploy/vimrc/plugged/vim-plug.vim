@@ -50,6 +50,7 @@ Plug 'lervag/vimtex', {'for': ['tex', 'sty']}
 
 Plug 'vim-scripts/xml.vim', {'for': ['xml']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+Plug 'ap/vim-css-color'
 
 " for ROS
 Plug 'taketwo/vim-ros'
