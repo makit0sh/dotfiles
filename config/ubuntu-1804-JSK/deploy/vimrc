@@ -1,0 +1,37 @@
+## deploy target destination path and filename
+target = .vimrc
+## specify subdirectory if necessary
+# subdirectory = .config
+
+## files in resources/deploy/filename_of_this_file will be concatenate into target file in your home directory
+## filename should not contain '='
+
+vim_basic.vim
+filetypes.vim
+undo_swap_backup.vim
+keymaps_basic.vim
+cursorline_custom.vim
+quickfix.vim
+transparent.vim
+tags.vim
+
+plugged/vim-plug.vim
+
+# plugin settings
+plugged/colorscheme_hybrid.vim
+plugged/airline_nopowerline.vim
+plugged/ycm.vim
+plugged/ultisnips.vim
+plugged/ale.vim
+plugged/vim-anzu.vim
+plugged/vimtex.vim
+plugged/yankround.vim
+plugged/emmet.vim
+plugged/commentary.vim
+plugged/anyfold.vim
+plugged/fold-cycle.vim
+plugged/tagbar.vim
+plugged/gitgutter.vim
+plugged/auto-pairs.vim
+plugged/vim-ros.vim
+plugged/ale-ros.vim
